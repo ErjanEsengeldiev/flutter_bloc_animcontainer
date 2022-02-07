@@ -14,12 +14,17 @@ class ContainerBloc extends Bloc<ContainerEvent, ContanerState> {
             color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
           ),
         ) {
-    on<RebildEvent>((event, emit) => emit(
-          ContanerChangedState(
-            width: Random().nextInt(300).toDouble(),
-            heght: Random().nextInt(300).toDouble(),
-            color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-          ),
-        ));
+    on<RebildEvent>(
+      (event, emit) => emit(
+        ContanerChangedState(
+          width: Random().nextInt(300).toDouble(),
+          heght: Random().nextInt(300).toDouble(),
+          color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+        ),
+      ),
+    );
+    on<ErorEvent>(
+      (event, emit) => emit(ContanerErorState()),
+    );
   }
 }

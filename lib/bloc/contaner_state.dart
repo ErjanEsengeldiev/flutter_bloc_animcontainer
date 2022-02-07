@@ -9,3 +9,5 @@ class ContanerChangedState extends ContanerState {
   ContanerChangedState(
       {required this.color, required this.heght, required this.width});
 }
+
+class ContanerErorState extends ContanerState{}
